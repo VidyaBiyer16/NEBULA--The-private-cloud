@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html>
+<title>Firefox Launch</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+
+<style>
+body 
+html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+  }
+.bgimg {
+    background-position: center;
+    background-size: cover;
+    background-image: url("https://i.ibb.co/r3KVrm0/bricks-brickwall-brickwork-1092364.jpg");
+    min-height: 75%;
+}
+.menu {
+    display: none;
+}
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+  border: ridge;
+}
+
+*{ margin: 0; padding: 0;}
+
+body {
+  /*To hide the horizontal scroller appearing during the animation*/
+  overflow: hidden;
+}
+
+#clouds{
+  padding: 100px 0;
+  background: #c9dbe9;
+  background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+  background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
+  background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+}
+
+/*Time to finalise the cloud shape*/
+.cloud {
+  width: 200px; height: 60px;
+  background: #fff;
+  
+  border-radius: 200px;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  
+  position: relative; 
+}
+
+.cloud:before, .cloud:after {
+  content: '';
+  position: absolute; 
+  background: #fff;
+  width: 100px; height: 80px;
+  position: absolute; top: -15px; left: 10px;
+  
+  border-radius: 100px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+  width: 120px; height: 120px;
+  top: -55px; left: auto; right: 15px;
+}
+
+/*Time to animate*/
+.x1 {
+  -webkit-animation: moveclouds 15s linear infinite;
+  -moz-animation: moveclouds 15s linear infinite;
+  -o-animation: moveclouds 15s linear infinite;
+}
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+.x2 {
+  left: 200px;
+  
+  -webkit-transform: scale(0.6);
+  -moz-transform: scale(0.6);
+  transform: scale(0.6);
+  opacity: 0.6; /*opacity proportional to the size*/
+  
+  /*Speed will also be proportional to the size and opacity*/
+  /*More the speed. Less the time in 's' = seconds*/
+  -webkit-animation: moveclouds 25s linear infinite;
+  -moz-animation: moveclouds 25s linear infinite;
+  -o-animation: moveclouds 25s linear infinite;
+}
+
+.x3 {
+  left: -250px; top: -200px;
+  
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8; /*opacity proportional to the size*/
+  
+  -webkit-animation: moveclouds 20s linear infinite;
+  -moz-animation: moveclouds 20s linear infinite;
+  -o-animation: moveclouds 20s linear infinite;
+}
+
+.x4 {
+  left: 470px; top: -250px;
+  
+  -webkit-transform: scale(0.75);
+  -moz-transform: scale(0.75);
+  transform: scale(0.75);
+  opacity: 0.75; /*opacity proportional to the size*/
+  
+  -webkit-animation: moveclouds 18s linear infinite;
+  -moz-animation: moveclouds 18s linear infinite;
+  -o-animation: moveclouds 18s linear infinite;
+}
+
+.x5 {
+  left: -150px; top: -150px;
+  
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8; /*opacity proportional to the size*/
+  
+  -webkit-animation: moveclouds 20s linear infinite;
+  -moz-animation: moveclouds 20s linear infinite;
+  -o-animation: moveclouds 20s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+  0% {margin-left: 1000px;}
+  100% {margin-left: -1000px;}
+}
+@-moz-keyframes moveclouds {
+  0% {margin-left: 1000px;}
+  100% {margin-left: -1000px;}
+}
+@-o-keyframes moveclouds {
+  0% {margin-left: 1000px;}
+  100% {margin-left: -1000px;}
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: auto;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: auto;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+.alert {
+  padding: 20px;
+  background-color: lightslategrey;
+  color: white;
+  margin-top: -271px;
+  border: inset;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+</style>
+<head>
+  <script src= 
+        "https://code.jquery.com/jquery-3.4.0.min.js"> 
+    </script>
+</head>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+  </div>
+</div>
+
+
+
+<!-- moving clouds -->
+  <div id="clouds">
+			  <div class="cloud x1"></div>
+			  <!-- Time for multiple clouds to dance around -->
+			  <div class="cloud x2"></div>
+			  <div class="cloud x3"></div>
+			  <div class="cloud x4"></div>
+			  <div class="cloud x5"></div>
+			<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+			 
+
+			  <!-- The cloud service -->
+			  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+			  
+					  <div class="alert">
+					   
+			         <strong style="font-size: 17px;">Firefox has been successfully launched!!!</strong><br>
+			        
+			         <STRONG>THANK YOU.</STRONG>
+					</div><br><br>
+<div class="button">
+<a href="cgi-bin/saas_firefox.py">Click on this link to launch firefox</a>
+</div>
+
+					
+					
+			  </div>
+      </div>
+    </div>
+
+<br>
+
+
+
+
+ 
+   
+
+
+
+
+</body>
+</html>
