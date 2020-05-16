@@ -1,0 +1,23 @@
+- hosts: localhost
+  tasks:
+       - lvol:
+          vg: staas
+          lv: 4ni16cs098
+          size: 1G
+       - filesystem:
+          fstype: ext4
+          dev: /dev/staas/4ni16cs098
+       - file:
+          path: "/var/www/html/STAAS_CLOUD/4ni16cs098"
+          state: directory
+          owner: apache
+          mode: 0755
+       - mount:
+          path: "/var/www/html/STAAS_CLOUD/4ni16cs098"
+          src: "/dev/staas/4ni16cs098"
+          fstype: ext4
+          state: mounted
+       - command: "partprobe /dev/sdc"
+       - lineinfile:
+          path: "/etc/fstab"
+          line: "/dev/staas/4ni16cs098 /var/www/html/STAAS_CLOUD/4ni16cs098 ext4 defaults 0 0"  

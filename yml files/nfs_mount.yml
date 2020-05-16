@@ -1,0 +1,10 @@
+- hosts: all
+  tasks:
+    - mount:
+        fstype: nfs
+        opts: defaults
+        dump: 0
+        passno: 0
+        state: mounted
+        src: 192.168.43.72:/var/www/html/STAAS_CLOUD/4ni16cs098
+        path: /root/4ni16cs098

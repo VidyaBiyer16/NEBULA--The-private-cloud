@@ -1,0 +1,16 @@
+- hosts: localhost
+  tasks:
+       - package:
+           name: "nfs-utils"
+           state: present
+       - service:
+           name: "nfs-utils"      
+           state: started
+           enabled: yes
+       - copy:
+           dest: "/etc/exports"      
+           content: "/var/www/html/STAAS_CLOUD/4ni16cs098     *(rw,no_root_squash)"    
+           mode: 0755
+           owner: apache
+
+   
